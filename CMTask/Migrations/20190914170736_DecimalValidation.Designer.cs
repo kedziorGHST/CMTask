@@ -11,8 +11,8 @@ using System;
 namespace CMTask.Migrations
 {
     [DbContext(typeof(ProductContext))]
-    [Migration("20190912202600_Initial")]
-    partial class Initial
+    [Migration("20190914170736_DecimalValidation")]
+    partial class DecimalValidation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,7 +30,8 @@ namespace CMTask.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<decimal>("price");
+                    b.Property<decimal?>("price")
+                        .IsRequired();
 
                     b.HasKey("id");
 

@@ -55,7 +55,7 @@ namespace CMTask.Controllers
             _dataRepository.Post(product);
             return CreatedAtRoute(
                 "Get",
-                new {id = product.id}, product);
+                new {id = product.id}, product.id);
         }
 
         // PUT: api/Products/5

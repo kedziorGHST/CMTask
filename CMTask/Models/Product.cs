@@ -15,6 +15,6 @@ namespace CMTask.Models
         [Column(TypeName = "nvarchar(100)")]
         public string name { get; set; }
         [Required]
-        public decimal price { get; set; }
+        public decimal? price { get; set; }
     }
 }

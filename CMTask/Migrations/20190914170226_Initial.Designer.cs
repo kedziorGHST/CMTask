@@ -11,9 +11,10 @@ using System;
 namespace CMTask.Migrations
 {
     [DbContext(typeof(ProductContext))]
-    partial class ProductContextModelSnapshot : ModelSnapshot
+    [Migration("20190914170226_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,8 +30,7 @@ namespace CMTask.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<decimal?>("price")
-                        .IsRequired();
+                    b.Property<decimal>("price");
 
                     b.HasKey("id");
 
